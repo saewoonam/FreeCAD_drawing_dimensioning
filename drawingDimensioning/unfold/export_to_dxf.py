@@ -6,7 +6,7 @@ class ExportToDxfCommand:
     def Activated(self):
         V = getDrawingPageGUIVars()
         dialog = QtGui.QFileDialog(
-            QtGui.qApp.activeWindow(),
+            QtGui.QApplication.activeWindow(),
             "Enter the dxf file name"
             )
         dialog.setAcceptMode(QtGui.QFileDialog.AcceptSave)
@@ -53,9 +53,9 @@ def export_via_pstoedit( dxf_fn, V):
         # -dt: Draw text - Text is drawn as polygons
         # -f "format[:options]" target output format recognized by pstoedit.
         # -flat [flatness factor] If the output format does not support curves in the way PostScript does or if the -nc option is specified, all curves are approximated by lines. Using the -flat option  one  can  control  this approximation. This parameter is directly converted to a PostScript setflat command. Higher numbers, e.g. 10 give rougher, lower numbers, e.g. 0.1 finer approximations. #I the default is 1
-        QtGui.QMessageBox.information(  QtGui.qApp.activeWindow(), "Success", "%s successfully created" % dxf_fn )
+        QtGui.QMessageBox.information(  QtGui.QApplication.activeWindow(), "Success", "%s successfully created" % dxf_fn )
     except RuntimeError, msg:
-        QtGui.QMessageBox.critical( QtGui.qApp.activeWindow(), "pstoedit failed.", "%s\n\n suggestion: relaunch FreeCAD from BASH and try again." % msg )
+        QtGui.QMessageBox.critical( QtGui.QApplication.activeWindow(), "pstoedit failed.", "%s\n\n suggestion: relaunch FreeCAD from BASH and try again." % msg )
         #only works if FreeCAD is launched from bash shell?
         #work around for this?
         shellCmd('rm %s' % eps_fn)

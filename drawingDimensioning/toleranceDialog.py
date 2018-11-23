@@ -60,11 +60,11 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Add tolerance", None, QtGui.QApplication.UnicodeUTF8))
-        self.placeButton.setText(QtGui.QApplication.translate("Dialog", "Add", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("Dialog", "upper", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("Dialog", "lower", None, QtGui.QApplication.UnicodeUTF8))
-        self.upperLineEdit.setText(QtGui.QApplication.translate("Dialog", "+0", None, QtGui.QApplication.UnicodeUTF8))
-        self.lowerLineEdit.setText(QtGui.QApplication.translate("Dialog", "-0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("Dialog", "font scale", None, QtGui.QApplication.UnicodeUTF8))
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Add tolerance", None))
+        self.placeButton.setText(QtGui.QApplication.translate("Dialog", "Add", None))
+        self.label.setText(QtGui.QApplication.translate("Dialog", "upper", None))
+        self.label_2.setText(QtGui.QApplication.translate("Dialog", "lower", None))
+        self.upperLineEdit.setText(QtGui.QApplication.translate("Dialog", "+0", None))
+        self.lowerLineEdit.setText(QtGui.QApplication.translate("Dialog", "-0", None))
+        self.label_3.setText(QtGui.QApplication.translate("Dialog", "font scale", None))
 

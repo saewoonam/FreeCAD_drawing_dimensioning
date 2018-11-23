@@ -29,7 +29,7 @@ def errorMessagebox_with_traceback(title='Error'):
     'for also those PySide linked codes where the Python debugger does not work...'
     App.Console.PrintError(traceback.format_exc())
     QtGui.QMessageBox.critical( 
-        QtGui.qApp.activeWindow(), 
+        QtGui.QApplication.activeWindow(), 
         title,
         traceback.format_exc(),
         )
@@ -42,13 +42,13 @@ def getDrawingPageGUIVars():
     Get the FreeCAD window, graphicsScene, drawing page object, ...
     '''
     # get the active window
-    mw = QtGui.qApp.activeWindow()
+    mw = QtGui.QApplication.activeWindow()
     MdiArea = [c for c in mw.children() if isinstance(c,QtGui.QMdiArea)][0]
 
     try:
         subWinMW = MdiArea.activeSubWindow().children()[3]
     except AttributeError:
-        QtGui.QMessageBox.information( QtGui.qApp.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
+        QtGui.QMessageBox.information( QtGui.QApplication.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
         raise ValueError, notDrawingPage_title
 
     # The drawing 'page' is really a group in the model tree
@@ -61,7 +61,7 @@ def getDrawingPageGUIVars():
 
     # raise an error explaining that the page wasn't found if the list is empty
     if len(pages) <> 1:
-        QtGui.QMessageBox.information( QtGui.qApp.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
+        QtGui.QMessageBox.information( QtGui.QApplication.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
         raise ValueError, notDrawingPage_title
 
     # get the page from the list
@@ -70,7 +70,7 @@ def getDrawingPageGUIVars():
     try:
         graphicsView = [ c for c in subWinMW.children() if isinstance(c,QtGui.QGraphicsView)][0]
     except IndexError:
-        QtGui.QMessageBox.information( QtGui.qApp.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
+        QtGui.QMessageBox.information( QtGui.QApplication.activeWindow(), notDrawingPage_title, notDrawingPage_msg  )
         raise ValueError, notDrawingPage_title
     graphicsScene = graphicsView.scene()
     pageRect = graphicsScene.items()[0] #hope this index does not change!
@@ -168,7 +168,7 @@ def printGraphicsViewInfo( drawingVars ):
 class helpCommand:
     def Activated(self):
         QtGui.QMessageBox.information( 
-            QtGui.qApp.activeWindow(), 
+            QtGui.QApplication.activeWindow(), 
             'Drawing Dimensioning Help', 
             '''For help getting started, please refer to the following YouTube video tutorials:
 
