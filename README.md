@@ -1,3 +1,10 @@
+Go to the fork below... It works for python3 / FreeCAD 0.18, 2019-May
+
+https://github.com/looooo/FreeCAD_drawing_dimensioning.git
+
+
+My fork is so that this works in OSX for FreeCAD 0.17
+
 FreeCAD_drawing_dimensioning
 ============================
 
